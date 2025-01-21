@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 420px;
+    width: 600px;
     height: 700px;
     background-color: gray;
     border: none;
@@ -12,14 +12,31 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
 }
 
 .appname {
-    width: 420px;
-    height: 125px;
+    border-top-left-radius: 30px; 
+    border-top-right-radius: 30px;
+    width: 600px;
+    height: 115px;
     background-color: rgb(0, 0, 0);
     color: white; 
     align-items: center;
     justify-content: center;
-    margin-bottom: 100%;
+    margin-bottom: 450px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
 }
