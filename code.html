@@ -12,14 +12,45 @@
         <h1 class="title">FitTrack</h1>
     </div>
     <div class="input">
-        <h3 class="exercises"> Choose an Excercise: 
-            <select name="exercises" id="exercises">
-                <option value=""></option>
-                <option value="push ups">Push Ups</option>
-            </select>
-        </h3>
-        <label for="weight">Enter Your Weight:</label><br>
-        <h3 class="weight"><input type=""></h3>
+        <div class="column1">
+            <h3 class="exercises">    Choose an Excercise: 
+                <select name="exercises" id="exercises">
+                    <option value=""></option>
+                    <option value="push-ups">Push Ups</option>
+                    <option value="pull-ups">Pull Ups</option>
+                    <option value="Cardio">Cardio</option>
+
+                </select>
+            </h3>
+
+            <label for="weight"><h3>Enter Your Weight: (lbs)</h3></label>
+            <h3 class="weight"><input type=""></h3>
+        </div>
+
+        <div class="column2">
+            <h3 class="intensity">What is the intensity?
+                <select name="intensity" id="">
+                    <option value=""></option>
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select>
+            </h3>
+        <h3 class="duration">For how long?
+                <select name="exercises" id="">
+                    <option value=""></option>
+                    <option value="15">15</option>
+                    <option value="30">30</option>
+                    <option value="45">45</option>
+                    <option value="60">60</option>
+                    <option value=">60">More than 60 Minutes</option>
+                </select>
+            </h3>
+        </div>
+    </div>
+
+    <div class="submit-button">
+        <button>Calculate</button>
     </div>
 </div>
 </body>
