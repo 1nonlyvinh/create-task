@@ -3,28 +3,29 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    justify-content: space-around;
     width: 500px;
-    height: 700px;
+    height: 660px;
     background-color: gray;
-    border: none;
+    border: solid black;
     border-radius: 30px;
     position:absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
-
 }
 
 .appname {
     border-top-left-radius: 30px; 
     border-top-right-radius: 30px;
     width: 500px;
-    height: 200px;
+    height: 100px;
     background-color: rgb(0, 0, 0);
     color: white; 
     align-items: center;
     justify-content: center;
+    position: fixed;
+    top: 0;
 
 }
 
@@ -32,19 +33,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    justify-content: space-around;
 
 }
 
 .input {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 350px;
-    margin-top: 25px; 
     padding: 8px; 
     background-color: rgb(255, 255, 255);
-    height: 700px;
     width: 450px;
+    margin-top: 10%; 
+    border: solid black;
+
 }
 
 .weight {
@@ -66,7 +67,7 @@
 
 .submit-button {
     position: absolute;
-    top: 55%; 
+    top: 53%; 
 }
 
 h3, h1 {
@@ -74,15 +75,13 @@ h3, h1 {
 }
 
 
-.display {
+.output {
         display: flex;
-        align-items: center;
         justify-content: center;
-        height: 200px;
+        height: 180px;
         width: 467px;
-        margin-top: 34%;
-        top: 27%; 
-        position: absolute;
         background-color: white;
+        border: solid black;
+
 
 }
