@@ -75,13 +75,15 @@ h3, h1 {
 }
 
 
-.output {
+.final-display {
         display: flex;
+        align-items: center;
         justify-content: center;
         height: 180px;
         width: 467px;
         background-color: white;
         border: solid black;
+        text-align: center;
 
 
 }
