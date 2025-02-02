@@ -5,8 +5,6 @@ const exercises = [
 
 const exerciseDropDown = document.getElementById('exercise-selection');
 
-
-// fix this, check w/ console
 for (let i = 0; i < exercises.length; i++) {
     let option = document.createElement("option");
       option.text = exercises[i].name;
