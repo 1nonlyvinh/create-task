@@ -1,40 +1,15 @@
-const exercise = document.getElementById('exercises');
+const exercises = [
+  { name: "Push-Up", met: "6.91" },
+  { name: "Pull-Up", met: "8.00" },
+];
 
-const workoutArray = [];
-index = 0; 
+const exerciseDropDown = document.getElementById('exercise-selection');
 
-console.log(exercise)
 
-for (let i = 0; i < exercise.options.length; i++) {
-    workoutArray.push(exercise.options[i].value);
+// fix this, check w/ console
+for (let i = 0; i < exercises.length; i++) {
+    let option = document.createElement("option");
+      option.text = exercises[i].name;
+      option.value = exercises[i].met;
+      exerciseDropDown.appendChild(option);
 }
-
-
-console.log(workoutArray);
-
-
-
-const intensityArray = [
-    { intensity: 'High'},
-    { intensity: 'Medium'},
-    { intensity: 'Low'},
-];
-
-const durationArray = [
-    { duration: '15'},
-    { duration: '30'},
-    { duration: '45'},
-    { duration: '60'},
-    { duration: 'More than 60 Minutes'},
-];
-
-```
-                    <option value=""></option>
-                    <option value="push-ups">Push Ups</option>
-                    <option value="Pull-ups">Pull Ups</option>
-                    <option value="cardio">Cardio</option>
-                    <option value="squats">Squats</option>
-                    <option value="burpees">Burpees</option>
-                    <option value="dips ">Dips</option>
-                    <option value="plank">Plank</option>
-```
