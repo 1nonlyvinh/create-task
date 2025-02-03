@@ -3,44 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TorchTracker</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="appscreen">
     <div class="appname">
-        <h1 class="title">FitTrack</h1>
+        <h1 class="title">TorchTracker</h1>
     </div>
     <div class="input">
-        <div class="column1">
-            <h3 class="exercises" id="exercises">Choose an Excercise: 
-                <select id="exercise-selection"></select>
-            </h3>
-            <label for="weight"><h3>Enter Your Weight: (Kg)</h3></label>
-            <h3 class="weight"><input type=""></h3>
-        </div>
-
-        <div class="column2">
-            <h3 class="intensity">Intensity?
-                <select name="intensity" id="">
+        <div class="row">
+            <div class="exercise-div">
+                <h3 class="exercises" id="exercises">Excercise:</h3>
+                    <select id="exercise-selection">
+                        <option value=""></option>
+                    </select>
+            </div>
+            <div class="duration-div">
+                <h3 class="duration">Duration:</h3>
+                <select name="" id="duration-selection">
                     <option value=""></option>
-                    <option value="high">High</option>
-                    <option value="medium">Medium</option>
-                    <option value="low">Low</option>
                 </select>
-            </h3>
-        <h3 class="duration">For how long?
-                <select name="exercises" id="">
-                    <option value=""></option>
-                    <option value="15">15</option>
-                    <option value="30">30</option>
-                    <option value="45">45</option>
-                    <option value="60">60</option>
-                    <option value=">60">More than 60 Minutes</option>
-                </select>
-            </h3>
+            </div>
         </div>
+        <div class="row2">         
+            <div class="weight-div">
+                <label for="weight"><h3>Weight: (Kg)</h3></label>
+                <h3 class="weight"><input type=""></h3>
+            </div>
     </div>
+</div>
 
     <div class="submit-button">
         <button>Calculate</button>
@@ -48,7 +40,10 @@
 
 
     <div class="final-display">Your Calories Burned:</div>
-</div>
+
+    <div class="info-link">
+        <a href="about.html">Info on TorchTracker</a>
+    </div>
 </body>
 <script src="script.js"></script>
 </html>
