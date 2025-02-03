@@ -13,6 +13,8 @@ for (let i = 0; i < exercises.length; i++) {
       exerciseDropDown.appendChild(option);
 }
 
+console.log(exerciseDropDown.value)
+
 const duration = [
   { length: "15 Minutes", number: .25},
   { length: "30 Minutes", number: .50},
@@ -28,3 +30,13 @@ for (let i = 0; i < duration.length; i++) {
     option.value = duration[i].number;
     durationDropDown.appendChild(option);
 }
+
+console.log(durationDropDown.value)
+
+const weightValue = document.getElementById('weight-input').value;
+console.log(weightValue); 
+
+function calcCaloriesBurned(exerciseDropDown, durationDropDown, weightValue) {
+  return exerciseDropDown.value * durationDropDown.value * weightValue;
+};
+
