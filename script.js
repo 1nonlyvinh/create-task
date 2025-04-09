@@ -41,6 +41,12 @@ const weightValue = document.getElementById('weight-input').value;
 console.log(weightValue); 
 
 function calcCaloriesBurned(exerciseDropDown, durationDropDown, weightValue) {
-  return exerciseDropDown.value * durationDropDown.value * weightValue;
+  return exerciseDropDown.value * durationDropDown.value * weightValue; 
 };
+
+const calcButton = document.getElementById('submit-button');
+
+calcButton.addEventListener("click", () => {
+  calcCaloriesBurned()
+}); 
 
