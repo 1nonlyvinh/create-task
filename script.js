@@ -24,12 +24,16 @@ const duration = [
 
 const durationDropDown = document.getElementById('duration-selection');
 
-for (let i = 0; i < duration.length; i++) {
-  let option = document.createElement("option");
-    option.text = duration[i].length;
-    option.value = duration[i].number;
-    durationDropDown.appendChild(option);
+function populateDuration(duration) {
+  for (let i = 0; i < duration.length; i++) {
+    let option = document.createElement("option");
+      option.text = duration[i].length;
+      option.value = duration[i].number;
+      durationDropDown.appendChild(option);
+  }
 }
+populateDuration(duration)
+
 
 console.log(durationDropDown.value)
 
