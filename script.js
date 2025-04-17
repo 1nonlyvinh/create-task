@@ -5,48 +5,55 @@ const exercises = [
 
 const exerciseDropDown = document.getElementById('exercise-selection');
 
-// populates exercise drop-down
+// Populate exercise drop-down
 for (let i = 0; i < exercises.length; i++) {
-    let option = document.createElement("option");
-      option.text = exercises[i].name;
-      option.value = exercises[i].met;
-      exerciseDropDown.appendChild(option);
+  let option = document.createElement("option");
+  option.text = exercises[i].name;
+  option.value = exercises[i].met;
+  exerciseDropDown.appendChild(option);
 }
 
-console.log(exerciseDropDown.value)
-
 const duration = [
-  { length: "15 Minutes", number: .25},
-  { length: "30 Minutes", number: .50},
-  { length: "45 Minutes", number: .75},
-  { length: "60 Minutes", number: 1.00},
+  { length: "15 Minutes", number: 0.25 },
+  { length: "30 Minutes", number: 0.50 },
+  { length: "45 Minutes", number: 0.75 },
+  { length: "60 Minutes", number: 1.00 },
 ];
 
 const durationDropDown = document.getElementById('duration-selection');
 
+// Populate duration drop-down
 function populateDuration(duration) {
   for (let i = 0; i < duration.length; i++) {
     let option = document.createElement("option");
-      option.text = duration[i].length;
-      option.value = duration[i].number;
-      durationDropDown.appendChild(option);
+    option.text = duration[i].length;
+    option.value = duration[i].number;
+    durationDropDown.appendChild(option);
   }
 }
-populateDuration(duration)
+populateDuration(duration);
 
+// Calorie calculation function
+function calcCaloriesBurned(met, duration, weight) {
+  return met * duration * weight;
+}
 
-console.log(durationDropDown.value)
-
-const weightValue = document.getElementById('weight-input').value;
-console.log(weightValue); 
-
-function calcCaloriesBurned(exerciseDropDown, durationDropDown, weightValue) {
-  return exerciseDropDown.value * durationDropDown.value * weightValue; 
-};
-
+// Button event listener
 const calcButton = document.getElementById('submit-button');
 
 calcButton.addEventListener("click", () => {
-  calcCaloriesBurned()
-}); 
+  const metValue = parseFloat(exerciseDropDown.value);
+  const durationValue = parseFloat(durationDropDown.value);
+  const weightValue = parseFloat(document.getElementById('weight-input').value);
 
+  if (isNaN(metValue) || isNaN(durationValue) || isNaN(weightValue)) {
+    alert("Please fill in all fields correctly.");
+    return;
+  }
+
+  const calories = calcCaloriesBurned(metValue, durationValue, weightValue);
+  console.log(`Calories burned: ${calories.toFixed(2)}`);
+
+  // Optional: Display it in the HTML
+  document.getElementById('result').innerText = `Calories burned: ${calories.toFixed(2)}`;
+});

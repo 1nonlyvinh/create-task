@@ -15,29 +15,28 @@
         <div class="row">
             <div class="exercise-div">
                 <h3 class="exercises" id="exercises">Excercise:</h3>
-                    <select id="exercise-selection">
-                    </select>
+                <select id="exercise-selection"></select>
             </div>
             <div class="duration-div">
                 <h3 class="duration">Duration:</h3>
-                <select name="" id="duration-selection">
-                </select>
+                <select id="duration-selection"></select>
             </div>
         </div>
         <div class="row2">         
             <div class="weight-div">
                 <label for="weight"><h3>Weight: (Kg)</h3></label>
-                <h3 class="weight"><input type="" id="weight-input"></h3>
+                <h3 class="weight"><input type="number" id="weight-input" placeholder="Enter weight in kg" />
+                </h3>
             </div>
     </div>
 </div>
 
-    <div id="submit-button">
-        <button>Calculate</button>
+    <div id="sub-button">
+        <button id="submit-button">Calculate</button>
     </div>
 
 
-    <div class="final-display">Your Calories Burned:</div>
+    <div class="final-display"><p id="result"></p></div>
 
     <div class="info-link">
         <a href="about.html">Info on TorchTracker</a>
