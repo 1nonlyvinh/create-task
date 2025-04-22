@@ -94,6 +94,7 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
+    margin-right: 10%;
 
 }
 
@@ -101,6 +102,7 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
+    margin-right: 3%; 
 
 }
 
