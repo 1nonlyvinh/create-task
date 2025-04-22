@@ -1,4 +1,5 @@
-const exercises = [ // List of exercises containing name & met value to be used later 4 calculations
+ // List of exercises containing name & met value to be used later 4 calculations
+const exercises = [
   { name: "Select an exercise"},
   { name: "Walking (3.0 mph)", met: "3.3"},
   { name: "Walking (4.0 mph)", met: "5.0"},
@@ -17,12 +18,16 @@ const exercises = [ // List of exercises containing name & met value to be used 
   { name: "Stair climbing (fast pace)", met: "8.8"},
 ];
 
-const exerciseDropDown = document.getElementById('exercise-selection'); // assigns id to html element, dropdown box for exercises
+// assigns id to html element, dropdown box for exercises
+const exerciseDropDown = document.getElementById('exercise-selection'); 
 
-function populateExercises(exercises) { // Populate exercise drop-down w/ for loop & checks if correct amount pop
-  exerciseOptions = 0; // variable to check how many exercises are inputed
+ // Populate exercise drop-down w/ for loop & checks if correct amount pop
+function populateExercises(exercises) {
+  // variable to check how many exercises are inputed
+  exerciseOptions = 0; 
 
-  for (let i = 0; i < exercises.length; i++) { // loop to populate dropdown boxes w/ items from list
+  // loop to populate dropdown boxes w/ items from list
+  for (let i = 0; i < exercises.length; i++) { 
     let option = document.createElement("option");
     option.text = exercises[i].name;
     option.value = exercises[i].met;
@@ -40,8 +45,8 @@ function populateExercises(exercises) { // Populate exercise drop-down w/ for lo
 }
 populateExercises(exercises); // call to function 
 
-
-const duration = [ // list for duration and value to be included in equation
+// list for duration and value to be included in equation
+const duration = [ 
   { length: "Select a duration"},
   { length: "15 Minutes", number: 0.25 },
   { length: "30 Minutes", number: 0.50 },
@@ -53,13 +58,16 @@ const duration = [ // list for duration and value to be included in equation
   { length: "120 Minutes", number: 2.00 },
 ];
 
-const durationDropDown = document.getElementById('duration-selection'); // assigns id to drop down for durations
+// assigns id to drop down for durations
+const durationDropDown = document.getElementById('duration-selection'); 
 
+// Populate duration drop-down w/ for loop & checks if correct amount pop
+function populateDuration(duration) { 
+   // variable to check how many exercises are inputed
+  durationOptions = 0;
 
-function populateDuration(duration) { // Populate duration drop-down w/ for loop & checks if correct amount pop INDIVIDUAL FUNCTION
-  durationOptions = 0; // variable to check how many exercises are inputed
-
-  for (let i = 0; i < duration.length; i++) { // loop to populate dropdown boxes w/ items from list
+  // loop to populate dropdown boxes w/ items from list
+  for (let i = 0; i < duration.length; i++) { 
     let option = document.createElement("option");
     option.text = duration[i].length;
     option.value = duration[i].number;
@@ -67,7 +75,8 @@ function populateDuration(duration) { // Populate duration drop-down w/ for loop
     durationOptions++;  
   }
 
-  if (duration.length > 9) {   // selection to make sure the correct amount of exercises are populated
+  // selection to make sure the correct amount of exercises are populated
+  if (duration.length > 9) {  
     alert("Error Durations Overflow")
   }
 
@@ -83,7 +92,7 @@ function calcCaloriesBurned(met, duration, weight) {
 
 const calcButton = document.getElementById('submit-button'); // Button event listener
 
-// when button is clicked, finds met and duration value selected in drop down and weight value in kg and assigns it to arguments in calcCaloriesBurned()
+//button is clicked, finds values selected drop downs/ weight, assigns in calcCaloriesBurned()
 calcButton.addEventListener("click", () => {
   // assigns selected items and assigns values 
   const metValue = parseFloat(exerciseDropDown.value);
