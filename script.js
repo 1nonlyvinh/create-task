@@ -1,4 +1,4 @@
- // List of exercises containing name & met value to be used later 4 calculations
+// List of exercises containing name & met value to be used later 4 calculations
 const exercises = [
   { name: "Select an exercise"},
   { name: "Walking (3.0 mph)", met: "3.3"},
@@ -18,34 +18,36 @@ const exercises = [
   { name: "Stair climbing (fast pace)", met: "8.8"},
 ];
 
+
 // assigns id to html element, dropdown box for exercises
 const exerciseDropDown = document.getElementById('exercise-selection'); 
 
- // Populate exercise drop-down w/ for loop & checks if correct amount pop
-function populateExercises(exercises) {
+ // passes list & populates drop-down w/ for loop & checks if correct amount pop
+function populateExercises(list) {
   // variable to check how many exercises are inputed
-  exerciseOptions = 0; 
+  listOptions = 0; 
 
   // loop to populate dropdown boxes w/ items from list
-  for (let i = 0; i < exercises.length; i++) { 
+  for (let i = 0; i < list.length; i++) { 
     let option = document.createElement("option");
-    option.text = exercises[i].name;
-    option.value = exercises[i].met;
+    option.text = list[i].name;
+    option.value = list[i].met;
     exerciseDropDown.appendChild(option);
-    exerciseOptions++ 
+    listOptions++ 
   }
 
   // selection to make sure the correct amount of exercises make it in
-  if (exercises.length > 16) {
-    alert("Error Exercises Overflow")
+  if (list.length > 16) {
+    alert("Error Overflow")
   }
-  console.log(exerciseOptions); // console log 
-  return exerciseOptions; // returns amount inputed into drop-down
+  console.log(listOptions); // console log 
+  return listOptions; // returns amount inputed into drop-down
 
 }
 populateExercises(exercises); // call to function 
 
 // list for duration and value to be included in equation
+
 const duration = [ 
   { length: "Select a duration"},
   { length: "15 Minutes", number: 0.25 },
@@ -58,19 +60,21 @@ const duration = [
   { length: "120 Minutes", number: 2.00 },
 ];
 
+
 // assigns id to drop down for durations
 const durationDropDown = document.getElementById('duration-selection'); 
 
-// Populate duration drop-down w/ for loop & checks if correct amount pop
-function populateDuration(duration) { 
+// Passes other list populate duration drop-down w/ for loop & checks if correct amount pop
+function populateDuration(array) { 
    // variable to check how many exercises are inputed
   durationOptions = 0;
 
   // loop to populate dropdown boxes w/ items from list
-  for (let i = 0; i < duration.length; i++) { 
+
+  for (let i = 0; i < array.length; i++) { 
     let option = document.createElement("option");
-    option.text = duration[i].length;
-    option.value = duration[i].number;
+    option.text = array[i].length;
+    option.value = array[i].number;
     durationDropDown.appendChild(option); 
     durationOptions++;  
   }
