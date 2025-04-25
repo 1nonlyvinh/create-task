@@ -22,32 +22,28 @@ const exercises = [
 // assigns id to html element, dropdown box for exercises
 const exerciseDropDown = document.getElementById('exercise-selection'); 
 
- // passes list & populates drop-down w/ for loop & checks if correct amount pop
+// function gets items from list passes down populates dropdown
 function populateExercises(list) {
-  // variable to check how many exercises are inputed
-  listOptions = 0; 
 
-  // loop to populate dropdown boxes w/ items from list
-  for (let i = 0; i < list.length; i++) { 
+  for (let i = 0; i < list.length; i++) { // populates drowdown for exercises
     let option = document.createElement("option");
     option.text = list[i].name;
     option.value = list[i].met;
     exerciseDropDown.appendChild(option);
-    listOptions++ 
   }
+  
+  exerciseDropDown.addEventListener("change", () => { //if high met corresponds with exercise, gives alert
+    const selectedOption = exerciseDropDown.options[exerciseDropDown.selectedIndex];
+    const metValue = parseFloat(selectedOption.value);
 
-  // selection to make sure the correct amount of exercises make it in
-  if (list.length > 16) {
-    alert("Error Overflow")
-  }
-  console.log(listOptions); // console log 
-  return listOptions; // returns amount inputed into drop-down
-
+    if (metValue > 6) {
+      alert(`${selectedOption.text} is a high intensity workout!`);
+    }
+  });
 }
-populateExercises(exercises); // call to function 
+populateExercises(exercises); // call to function
 
 // list for duration and value to be included in equation
-
 const duration = [ 
   { length: "Select a duration"},
   { length: "15 Minutes", number: 0.25 },
@@ -65,16 +61,16 @@ const duration = [
 const durationDropDown = document.getElementById('duration-selection'); 
 
 // Passes other list populate duration drop-down w/ for loop & checks if correct amount pop
-function populateDuration(array) { 
+function populateDuration(duration) { 
    // variable to check how many exercises are inputed
   durationOptions = 0;
 
   // loop to populate dropdown boxes w/ items from list
 
-  for (let i = 0; i < array.length; i++) { 
+  for (let i = 0; i < duration.length; i++) { 
     let option = document.createElement("option");
-    option.text = array[i].length;
-    option.value = array[i].number;
+    option.text = duration[i].length;
+    option.value = duration[i].number;
     durationDropDown.appendChild(option); 
     durationOptions++;  
   }
@@ -87,7 +83,7 @@ function populateDuration(array) {
   console.log(durationOptions); // console log
   return durationOptions; // return variable
 }
-populateDuration(duration);
+populateDuration(duration); // call to func
 
 // Calorie calculation function, multiplies met by duration by weight (kg) values
 function calcCaloriesBurned(met, duration, weight) {
